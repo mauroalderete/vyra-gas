@@ -1,0 +1,26 @@
+{
+  "name": "vyra-gas",
+  "version": "1.0.0",
+  "description": "Google App Scripts de Vyra Project",
+  "main": "main.js",
+  "dependencies": {
+    "@types/google-apps-script": "^1.0.27"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/vyra/vyra-gas.git"
+  },
+  "keywords": [
+    "vyra"
+  ],
+  "author": "Rayquen",
+  "license": "private",
+  "bugs": {
+    "url": "https://gitlab.com/vyra/vyra-gas/issues"
+  },
+  "homepage": "https://gitlab.com/vyra/vyra-gas#readme"
+}
