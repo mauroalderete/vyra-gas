@@ -1,4 +1,4 @@
-import { Result } from "../../common/Result"
+import { Result } from "../../../common/Result"
 
 export interface IUIDValuObject{
     value: string

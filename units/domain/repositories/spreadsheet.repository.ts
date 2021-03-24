@@ -1,4 +1,4 @@
-import { Result } from "../../common/Result";
+import { Result } from "../../../common/Result";
 import { Unit } from "../entities/unit.entity";
 import { IUnit } from "../entities/unit.interface";
 import { UnitRepository } from "./base.repository";

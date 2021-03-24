@@ -1,5 +1,5 @@
-import { IBaseRepository } from "../../common/repositories/interfaces/base.interface";
-import { Result } from "../../common/Result";
+import { IBaseRepository } from "../../../common/repositories/interfaces/base.interface";
+import { Result } from "../../../common/Result";
 import { IUnit } from "../entities/unit.interface";
 
 export abstract class UnitRepository implements IBaseRepository<IUnit> {
