@@ -1,6 +1,5 @@
-import { Result } from "./common/Result"
-import { IUnit } from "./units/entities/unit.interface"
-import { UnitSpreadsheetRepository } from "./units/repositories/spreadsheet.repository"
+import { IUnitsCollection } from "./units/domain/entities/units.collection.interface"
+import { UnitSpreadsheetRepository } from "./units/domain/repositories/spreadsheet.repository"
 
 function test() {
 
@@ -13,8 +12,8 @@ function test() {
 
   unitRepository = new UnitSpreadsheetRepository(id, unidades)
 
-  unitRepository.load().then( (result: Result<IUnit[]>) => {
-    Logger.log(`Todo salio bien.. Hay ${result.getValue().length} unidades cargadas`)
+  unitRepository.load().then( (collection: IUnitsCollection) => {
+    Logger.log(`Todo salio bien.. Hay ${collection.length} unidades cargadas`)
   }, (reason) => {
     console.error(`Hubo un problema al cargar unidades: ${reason}`)
   } )

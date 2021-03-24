@@ -1,5 +1,5 @@
-import { Result } from "../../Result";
+import { Result } from "../../result.common";
 
 export interface ILoadRepository<T> {
-    load(): Promise<Result<T[]>>
+    load(): Promise<T[]>
 }

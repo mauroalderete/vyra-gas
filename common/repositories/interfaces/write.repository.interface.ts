@@ -1,4 +1,4 @@
-import { Result } from "../../Result";
+import { Result } from "../../result.common";
 
 export interface IWriteRepository<T> {
     create(item: T): Promise<Result<T>>
