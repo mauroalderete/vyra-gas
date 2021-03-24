@@ -11,14 +11,17 @@ export class UnitSpreadsheetRepository extends UnitRepository {
     private spreadsheet: GoogleAppsScript.Spreadsheet.Spreadsheet
     private sheet: GoogleAppsScript.Spreadsheet.Sheet
 
+    readonly collection: IUnitsCollection;
+
     constructor(id: string, sheetName: string){
-        super()
+        
+        this.collection = []
 
         this.id = id
         this.sheetName = sheetName
     }
-
-    load(): Promise<Result<IUnit[]>> {
+    
+    load(): Promise<IUnitsCollection> {
 
         return new Promise( (resolve, reject) => {
             try {
@@ -57,7 +60,7 @@ export class UnitSpreadsheetRepository extends UnitRepository {
 
             }
 
-            resolve( Result.ok<IUnit[]>( this.collection ) )
+            resolve( this.collection )
         } )
     }
 }
