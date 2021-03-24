@@ -1,9 +1,10 @@
-import { Result } from "../../../common/Result";
+import { Result } from "../../../common/result.common";
 import { Unit } from "../entities/unit.entity";
 import { IUnit } from "../entities/unit.interface";
-import { UnitRepository } from "./base.repository";
+import { IUnitsCollection } from "../entities/units.collection.interface";
+import { IUnitRepository } from "./unit.repository";
 
-export class UnitSpreadsheetRepository extends UnitRepository {
+export class UnitSpreadsheetRepository implements IUnitRepository {
 
     private id: string
     private sheetName: string
@@ -62,5 +63,21 @@ export class UnitSpreadsheetRepository extends UnitRepository {
 
             resolve( this.collection )
         } )
+    }
+
+    create(item: IUnit): Promise<Result<IUnit>> {
+        throw new Error("Method not implemented.");
+    }
+    update(uid: string, item: IUnit): Promise<Result<IUnit>> {
+        throw new Error("Method not implemented.");
+    }
+    delete(uid: string): Promise<Result<IUnit>> {
+        throw new Error("Method not implemented.");
+    }
+    find(item: IUnit): Promise<Result<IUnit>> {
+        throw new Error("Method not implemented.");
+    }
+    findOne(uid: string): Promise<Result<IUnit>> {
+        throw new Error("Method not implemented.");
     }
 }
