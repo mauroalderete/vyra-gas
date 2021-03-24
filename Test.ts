@@ -1,5 +1,8 @@
+import { IDomainService } from "./common/domainServices/domainService.interface"
 import { IUnitsCollection } from "./units/domain/entities/units.collection.interface"
 import { UnitSpreadsheetRepository } from "./units/domain/repositories/spreadsheet.repository"
+import { IUnitRepository } from "./units/domain/repositories/unit.repository"
+import { IntegrityUnitsDomainService } from "./units/domain/services/integrity.services"
 
 function test() {
 
@@ -8,11 +11,13 @@ function test() {
   const id = "1BPGEDtDsiHKNfJylUFfEy9esnYY1If6SAKHW82psthA"
   const unidades = "unidades"
   
-  let unitRepository: UnitSpreadsheetRepository
+  let unitRepo: IUnitRepository
+  unitRepo = new UnitSpreadsheetRepository(id, unidades)
 
-  unitRepository = new UnitSpreadsheetRepository(id, unidades)
+  let unitIntegrity: IDomainService<IUnitsCollection>
+  unitIntegrity = new IntegrityUnitsDomainService( unitRepo )
 
-  unitRepository.load().then( (collection: IUnitsCollection) => {
+  unitIntegrity.exec().then( (collection: IUnitsCollection) => {
     Logger.log(`Todo salio bien.. Hay ${collection.length} unidades cargadas`)
   }, (reason) => {
     console.error(`Hubo un problema al cargar unidades: ${reason}`)
